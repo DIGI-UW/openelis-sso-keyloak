@@ -66,13 +66,13 @@ services:
             
     oe.openelis.org:
         container_name: openelisglobal-webapp 
-        image: itechuw/openelis-global-2:latest 
+        image: itechuw/openelis-global-2:3.2.0.2 
         platform: linux/amd64  
         depends_on:
             - db.openelis.org
             - certs
         ports:
-            - "8080:8080"
+            # - "8080:8080"
             - "8443:8443"
         restart: always
         networks:
@@ -101,10 +101,10 @@ services:
             
     fhir.openelis.org:
         container_name: external-fhir-api
-        image: itechuw/openelis-global-2-fhir:latest
+        image: itechuw/openelis-global-2-fhir:3.2.0.2
         platform: linux/amd64
         ports:
-            - "8081:8080"
+            # - "8081:8080"
             - "8444:8443"
         depends_on:
             - db.openelis.org
@@ -132,7 +132,7 @@ services:
 
          
     frontend.openelis.org:
-        image: itechuw/openelis-global-2-frontend:latest
+        image: itechuw/openelis-global-2-frontend:3.2.0.2
         container_name: openelisglobal-front-end
         platform: linux/amd64
         networks:
@@ -143,7 +143,7 @@ services:
         tty: true
 
     proxy:
-        image: itechuw/openelis-global-2-proxy:latest
+        image: itechuw/openelis-global-2-proxy:3.2.0.2
         container_name: openelisglobal-proxy
         platform: linux/amd64
         ports:
@@ -162,11 +162,13 @@ services:
         logging: *local-logging    
         depends_on:
             - certs   
+
+    # KEY CLOAK        
     keycloak.openelis.org:
         container_name: keycloak
         image: quay.io/keycloak/keycloak:25.0.1
         ports:
-            - 8082:8080
+            - 8080:8080
         command: start-dev --import-realm
         environment:
             KEYCLOAK_ADMIN: admin
