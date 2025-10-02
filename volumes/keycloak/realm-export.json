@@ -47,15 +47,6 @@
   "roles": {
     "realm": [
       {
-        "id": "abacee5f-3a5e-41d4-9d7e-9ba7004ea3cf",
-        "name": "oeg-Global Administrator",
-        "description": "Global Administrator",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
         "id": "48b54f73-61a3-4642-9571-ada86025f2c2",
         "name": "uma_authorization",
         "description": "${role_uma_authorization}",
@@ -80,18 +71,8 @@
         "composite": true,
         "composites": {
           "realm": [
-            "oeg-Global Administrator",
             "offline_access",
-            "uma_authorization",
-            "oeg-Pathologist",
-            "oeg-User Account Administrator",
-            "oeg-Audit Trail",
-            "oeg-Analyser Import",
-            "oeg-Cytopathologist",
-            "oeg-Results-AllLabUnits",
-            "oeg-Validation-AllLabUnits",
-            "oeg-Reports-AllLabUnits",
-            "oeg-Reception-AllLabUnits"
+            "uma_authorization"
           ],
           "client": {
             "account": [
@@ -100,87 +81,6 @@
             ]
           }
         },
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "27675f70-b2a2-4156-bbb2-29b306e32bf0",
-        "name": "oeg-Pathologist",
-        "description": "Access to Pathology Page",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "cfa1f26e-8d1f-4d64-9fd1-4e7f8b2f9d1a",
-        "name": "oeg-User Account Administrator",
-        "description": "Add/remove users and assign roles.",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "6de8e56f-1c62-4985-b627-9d891d55ab40",
-        "name": "oeg-Audit Trail",
-        "description": "Able to view the audit trail",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "3b4d09d5-6d57-4a4e-8c79-cc4f36497f36",
-        "name": "oeg-Analyser Import",
-        "description": "Acces to Analyser Results Page",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "7987e3ea-88ed-4c36-bd9a-1aeea1fdd30d",
-        "name": "oeg-Cytopathologist",
-        "description": "Access to Cytology Page",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "ebadfa35-8239-4f44-baf4-6b4d7706ac92",
-        "name": "oeg-Results-AllLabUnits",
-        "description": "Enter and review results.",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "e9f22d49-22b0-49b5-9489-55930cbf59d8",
-        "name": "oeg-Validation-AllLabUnits",
-        "description": "A person who can validate results",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "a7a8a248-1b67-44f8-8c69-44745a83c3a0",
-        "name": "oeg-Reports-AllLabUnits",
-        "description": "Generate reports.",
-        "composite": false,
-        "clientRole": false,
-        "containerId": "openelis-realm",
-        "attributes": {}
-      },
-      {
-        "id": "f5d6db55-2d97-4ad3-9c49-1f967230b0df",
-        "name": "oeg-Reception-AllLabUnits",
-        "description": "Sample entry and patient management.",
-        "composite": false,
         "clientRole": false,
         "containerId": "openelis-realm",
         "attributes": {}
@@ -400,7 +300,98 @@
         }
       ],
       "security-admin-console": [],
-      "OpenELIS-Global_saml": [],
+      "OpenELIS-Global_saml": [
+        {
+          "id": "abacee5f-3a5e-41d4-9d7e-9ba7004ea3cf",
+          "name": "oeg-Global Administrator",
+          "description": "Global Administrator",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "27675f70-b2a2-4156-bbb2-29b306e32bf0",
+          "name": "oeg-Pathologist",
+          "description": "Access to Pathology Page",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "cfa1f26e-8d1f-4d64-9fd1-4e7f8b2f9d1a",
+          "name": "oeg-User Account Administrator",
+          "description": "Add/remove users and assign roles.",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "6de8e56f-1c62-4985-b627-9d891d55ab40",
+          "name": "oeg-Audit Trail",
+          "description": "Able to view the audit trail",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "3b4d09d5-6d57-4a4e-8c79-cc4f36497f36",
+          "name": "oeg-Analyser Import",
+          "description": "Acces to Analyser Results Page",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "7987e3ea-88ed-4c36-bd9a-1aeea1fdd30d",
+          "name": "oeg-Cytopathologist",
+          "description": "Access to Cytology Page",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "ebadfa35-8239-4f44-baf4-6b4d7706ac92",
+          "name": "oeg-Results-AllLabUnits",
+          "description": "Enter and review results.",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "e9f22d49-22b0-49b5-9489-55930cbf59d8",
+          "name": "oeg-Validation-AllLabUnits",
+          "description": "A person who can validate results",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "a7a8a248-1b67-44f8-8c69-44745a83c3a0",
+          "name": "oeg-Reports-AllLabUnits",
+          "description": "Generate reports.",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        },
+        {
+          "id": "f5d6db55-2d97-4ad3-9c49-1f967230b0df",
+          "name": "oeg-Reception-AllLabUnits",
+          "description": "Sample entry and patient management.",
+          "composite": false,
+          "clientRole": true,
+          "containerId": "openelis-role",
+          "attributes": {}
+        }
+      ],
       "admin-cli": [],
       "account-console": [],
       "broker": [
@@ -2365,7 +2356,7 @@
   "clientPolicies": {
     "policies": []
   },
-    "users": [
+  "users": [
     {
       "id": "4b6f84da-040d-45ef-b68a-25c40f91f7e8",
       "createdTimestamp": 1627046549319,
@@ -2393,9 +2384,22 @@
       "realmRoles": [
         "default-roles-openelis"
       ],
+      "clientRoles": {
+        "OpenELIS-Global_saml": [
+          "oeg-Global Administrator",
+          "oeg-Pathologist",
+          "oeg-User Account Administrator",
+          "oeg-Audit Trail",
+          "oeg-Analyser Import",
+          "oeg-Cytopathologist",
+          "oeg-Results-AllLabUnits",
+          "oeg-Validation-AllLabUnits",
+          "oeg-Reports-AllLabUnits",
+          "oeg-Reception-AllLabUnits"
+        ]
+      },
       "notBefore": 0,
       "groups": []
     }
   ]
-
 }
